@@ -1,0 +1,232 @@
+:root {
+    --main-light-color: white;
+    --main-light-color-hover: #DDDDDDFF;
+    --main-dark-color: #202020;
+    --main-dark-color-hover: #333333ff;
+    --kaede-green: #33D5AC;
+    --windows-blue: #0778d7;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+a.no-underline:hover {
+    text-decoration: none;
+}
+
+body,
+.container {
+    background-color: var(--main-light-color);
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+}
+
+/*约束主 container 不要太宽*/
+.small-container {
+    max-width: 800px;
+}
+
+body.dark,
+body.dark .container {
+    background-color: var(--main-dark-color);
+}
+
+
+.logo-font {
+    font-family: 'Ma Shan Zheng', serif;
+}
+
+nav.navbar {
+    background-color: var(--main-light-color);
+    padding: 0;
+    /*height: 80px;*/
+    border-bottom: 1px solid #7f7f7f;
+    /* 导航栏底部分割线 */
+}
+
+img.site-icon {
+    border-radius: 80px;
+    height: 2rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.6rem;
+    color: var(--kaede-green);
+    transition: all 0.2s;
+}
+
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+    color: var(--windows-blue);
+}
+
+body.dark nav.navbar {
+    background-color: var(--main-dark-color);
+}
+
+.navbar-toggler {
+    border: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 1rem;
+    padding-left: 1.6rem;
+    transition: all 0.2s;
+    color: black;
+}
+
+.navbar .navbar-nav .form-check-label {
+    font-size: 1.1rem;
+    color: black;
+}
+
+body.dark .navbar .navbar-nav .nav-link,
+body.dark .navbar .navbar-nav .form-check-label {
+    color: white;
+}
+
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: var(--main-light-color-hover);
+}
+
+body.dark .navbar .navbar-nav .nav-link:hover {
+    background-color: var(--main-dark-color-hover);
+}
+
+
+
+.nav-item.nav-toggle-son {
+    display: flex;
+    /* 使用Flexbox布局 */
+    align-items: center;
+    /* 垂直居中对齐 */
+}
+
+.navbar .navbar-nav .nav-toggle {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 4.2rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar .navbar-nav .nav-toggle {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 3rem;
+        padding-right: var(--bs-navbar-nav-link-padding-x);
+    }
+
+    .navbar .navbar-nav .form-check {
+        margin-bottom: 0;
+    }
+}
+
+.site-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.site-footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.site-footer a,
+.site-footer p,
+body.dark .site-footer a,
+body.dark .site-footer p {
+    color: #7f7f7f;
+    transition: all 0.2s;
+}
+
+.site-footer .self-main-color,
+body.dark .site-footer .self-main-color {
+    color: var(--kaede-green);
+    transition: all 0.2s;
+}
+
+.site-footer a:hover,
+body.dark .site-footer a:hover {
+    color: var(--kaede-green);
+}
+
+#dark-powerby-icon {
+    display: none;
+}
+
+#light-powerby-icon,
+#dark-powerby-icon {
+    padding-bottom: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    transition: all 0.2s;
+}
+
+body.dark #dark-powerby-icon {
+    display: inline;
+}
+
+body.dark #light-powerby-icon {
+    display: none;
+}
+
+.toast {
+    backdrop-filter: blur(4px);
+    border-color: var(--windows-blue);
+    position: fixed;
+    top: 3rem;
+    /* 距离顶部的距离 */
+    right: 1rem;
+    /* 距离右侧的距离 */
+    box-shadow: 0px 5px 20px -2px #55555599;
+}
+
+body.dark .toast {
+    box-shadow: 0px 5px 20px -2px #55555599;
+}
+
+.toast-blue .toast-header,
+.toast-blue .toast-body {
+    background-color: #97D4FF99;
+}
+
+body.dark .toast-blue .toast-header,
+body.dark .toast-blue .toast-body {
+    background-color: #00417399;
+}
+
+
+.fade {
+    transition: opacity .15s linear;
+}
+
+.input-group-lg {
+    margin-bottom: 1rem;
+}
+
+.secondary-description {
+    color: #7f7f7f;
+    font-size: 0.9rem;
+}

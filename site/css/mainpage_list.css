@@ -1,0 +1,141 @@
+img.column-link-avatar {
+    border-radius: 8px;
+    height: 100px;
+}
+.avatar-wrapper {
+    flex-shrink: 0;
+    margin-left: 14px; /* 添加左边距 */
+}
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 14px; /* 添加左边距 */
+}
+.text-wrapper-mo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 14px; /* 添加左边距 */
+    padding: 20px 0px;
+}
+.column-link-text-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.column-link-frame-size {
+    height: 7rem;
+    margin: 0px 8px;
+    align-items: center;
+    gap: 16px;
+}
+.list-card {
+    position: relative;
+    color: black;
+    /*box-shadow: 0 1px 30px -4px #e8e8e8;*/
+    background: #DDDDDDFF;
+    text-indent: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    display: flex;
+    border-radius: 8px;
+    border-left: 0px solid transparent;
+    margin-bottom: 1rem;
+}
+.list-card:hover {
+    box-shadow: 0px 5px 20px -2px #55555599;
+    background: #888888FF;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border-left: 20px solid var(--windows-blue);
+}
+.list-card i {
+    padding-right: 20px !important;
+    font-size: medium;
+}
+.list-card a {
+    padding: 5px !important;
+}
+.list-card:hover p {
+    color:  #000000 !important;
+    transition: color 0.2s !important;
+}
+body.dark .list-card {
+    color: #FFFFFF;
+    /*box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);*/
+    background: #333333ff;
+    /*-webkit-transition: all .2s;
+    transition: all .2s;*/
+}
+body.dark .list-card:hover {
+    box-shadow: 0px 5px 20px -2px #55555599;
+    background: #666666FF;
+    /*-webkit-transition: all .2s;
+    transition: all .2s;*/
+}
+
+body.dark .list-card:hover p {
+    color:  #FFFFFF !important;
+}
+
+.column-link-name {
+    margin: 0;
+    text-align: left;
+}
+.column-link-number {
+    margin: 0;
+    margin-right: 14px; /* 添加右边距 */
+}
+.column-link-number-mo {
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 2px; /* 不加的话，视觉上数字会左凸出来一点（虽然实际没有） */
+}
+.column-link-description {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.column-link-description-mo {
+    margin: 8px 0px 0px 0px;
+}
+
+.column-link-frame-size-mo {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+}
+img.column-link-avatar-mo {
+    border-radius: 8px;
+    height: 64px;
+}
+.avatar-date-star-wrapper-mo {
+    display: flex;
+    margin: 10px 10px 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    /*align-items: baseline;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-left: 14px;  添加左边距 */
+}
+.column-link-text-wrapper-mo {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px 0px 12px;
+}
+.column-link-text-wrapper-mo p.column-link-name{
+    font-size: 22px;
+}
+/* 在样式表中定义自定义横线样式 */
+.horizontal-line {
+    width: calc(100% - 32px); /* 设置横线宽度并左右各短16px */
+    height: 1px; /* 设置横线高度为1像素 */
+    background-color: #505050; /* 将横线颜色更改为白色 */
+    margin-left: 16px; /* 左边缩短 */
+    margin-right: 16px; /* 右边缩短 */
+}
+body.dark .horizontal-line {
+    background-color: #707070;
+}

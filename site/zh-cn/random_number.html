@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机数抽签-Eterance的百宝箱</title>
+    <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
+
+    <!-- v2 请求多种字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC">
+    <!-- 引入Bootstrap CSS文件 -->
+    <!-- 七牛云CDN -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/5.3.1/css/bootstrap.min.css">
+
+    <!--prism.js-->
+    <script src="https://cdn.staticfile.org/prism/9000.0.1/prism.min.js"></script>
+    <script src="https://cdn.staticfile.org/prism/9000.0.1/components/prism-sql.min.js"></script>
+    <link href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism.min.css" rel="stylesheet"
+        id="prism-stylesheet-light">
+    <link href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet"
+        id="prism-stylesheet-dark">
+    <!--剪贴板复制组件-->
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/random_number.css">
+    <!--组件-->
+    <script src="/components/footer.js" type="text/javascript" defer></script>
+    <script src="/components/navbar.js" type="text/javascript"></script>
+    <!-- 放在开头可以消除加载瞬间的白屏 -->
+    <script src="/js/dark.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <navbar-component></navbar-component>
+
+    <!-- 页面内容 -->
+    <div class="container mt-5 small-container">
+        <h1>随机数抽签</h1>
+        <br>
+        <p>
+            设置好起止范围，然后开始抽签吧！
+        </p>
+        <p>
+            注意：历史记录只会保存在本浏览器的 Cookie 中。当您清除 Cookie 或者退出无痕浏览模式时，历史记录也会被清除。
+        </p>
+        <br>
+
+        <div class="row mb-3">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div>
+                    <label class="mb-2">起始</label>
+                    <div class="input-group input-group-lg">
+                        <input type="number" class="form-control" id="startRange" value="1">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div>
+                    <label class="mb-2">结束</label>
+                    <div class="input-group input-group-lg">
+                        <input type="number" class="form-control" id="endRange" value="100">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div>
+                    <label class="mb-2">生成数量</label>
+                    <div class="input-group input-group-lg">
+                        <input type="number" class="form-control" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 在中等以上，两个按钮水平放置（块排列），并且左对齐 -->
+        <!-- 以下，两个按钮竖排列（网格排列），居中且宽度为屏幕一半 -->
+        <div class="d-grid gap-4 col-6 col-md-12 mx-auto d-md-block mb-3">
+            <button type="button" class="btn btn-primary btn-lg" onclick="generateRandomNumbers()">生成随机数</button>
+            <button type="button" class="btn btn-danger btn-lg" onclick="confirmClearHistory()">清除历史记录</button>
+        </div>
+
+
+
+        <h2 class="mt-4 mb-3">抽签历史记录</h2>
+        <ul id="randomNumbers" class="list-group"></ul>
+    </div>
+
+
+
+    <div id="toastMessage" class="toast toast-blue" role="alert" aria-live="assertive" aria-atomic="true"
+        data-bs-delay="3000">
+        <div class="toast-header">
+            <h5 class="me-auto mb-0">提示</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <h5 class="mb-0">已清空历史记录。</h5>
+        </div>
+    </div>
+
+    <footer-component class="text-center mt-auto"></footer-component>
+
+    <!-- 语言独特代码 -->
+    <script>
+        const clearRandomHistoryConfirm = "确定要清除随机数抽签历史记录吗？"
+    </script>
+    <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/random_number.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/prismjs_theme_switch.js"></script>
+</body>
+
+</html>

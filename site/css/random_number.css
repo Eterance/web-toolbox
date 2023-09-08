@@ -1,0 +1,15 @@
+.list-group-item.container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.timestamp {
+    color: #7f7f7f;
+    padding: 0.5rem;
+}
+
+.random-result {
+    padding: 0.5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
