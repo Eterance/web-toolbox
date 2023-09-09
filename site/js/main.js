@@ -53,6 +53,7 @@ window.addEventListener('load', function () {
     }
 });
 
+// 切换语言
 function changeLanguage(languageCode) {
     // 获取当前页面的URL
     let currentURL = window.location.pathname;
@@ -62,9 +63,11 @@ function changeLanguage(languageCode) {
     let newURL = '';
 
     if (currentURL == "/") {
+        // 简体中文首页跳转到其他语言首页
         newURL = '/' + languageCode + '/';
     }
-    else if (isLanguageCodeOnly(currentURL)) {
+    else if (isLanguageCodeOnly(currentURL) && languageCode == 'zh-cn') {
+        // 其他语言首页跳转到简体中文首页
         newURL = '/';
     }
     else {
