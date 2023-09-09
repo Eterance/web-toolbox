@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>随机数抽签 - Eterance的百宝箱</title>
+    <title>Random Number Draw - Eterance's Toolbox</title>
     <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
 
     <!--prism.js-->
@@ -14,38 +14,38 @@
         id="prism-stylesheet-light">
     <link href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet"
         id="prism-stylesheet-dark">
-    <!--剪贴板复制组件-->
+    <!--Clipboard.js-->
     <script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
 
     <!--CSS-->
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/random_number.css">
-    <!--组件-->
-    <script src="/components/zh-cn/footer.js" type="text/javascript" defer></script>
-    <script src="/components/zh-cn/navbar.js" type="text/javascript"></script>
-    <!-- 放在开头可以消除加载瞬间的白屏 -->
+    <!--Components-->
+    <script src="/components/en-us/footer.js" type="text/javascript" defer></script>
+    <script src="/components/en-us/navbar.js" type="text/javascript"></script>
+    <!-- Placing it at the beginning can eliminate the white screen during loading -->
     <script src="/js/dark.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <navbar-component></navbar-component>
 
-    <!-- 页面内容 -->
+    <!-- Page Content -->
     <div class="container mt-5 small-container">
-        <h1>随机数抽签</h1>
+        <h1>Random Number Draw</h1>
         <br>
         <p>
-            设置好起止范围，然后开始抽签吧！
+            Set the start and end range, then start drawing!
         </p>
         <p>
-            注意：历史记录只会保存在本浏览器的 Cookie 中。当您清除 Cookie 或者退出无痕浏览模式时，历史记录也会被清除。
+            Note: The history will only be saved in the browser's cookie. When you clear the cookie or exit the incognito mode, the history will also be cleared.
         </p>
         <br>
 
         <div class="row mb-3">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div>
-                    <label class="mb-2">起始</label>
+                    <label class="mb-2">Start</label>
                     <div class="input-group input-group-lg">
                         <input type="number" class="form-control" id="startRange" value="1">
                     </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div>
-                    <label class="mb-2">结束</label>
+                    <label class="mb-2">End</label>
                     <div class="input-group input-group-lg">
                         <input type="number" class="form-control" id="endRange" value="100">
                     </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div>
-                    <label class="mb-2">生成数量</label>
+                    <label class="mb-2">Quantity</label>
                     <div class="input-group input-group-lg">
                         <input type="number" class="form-control" id="quantity" value="1" min="1">
                     </div>
@@ -69,16 +69,16 @@
             </div>
         </div>
 
-        <!-- 在中等以上，两个按钮水平放置（块排列），并且左对齐 -->
-        <!-- 以下，两个按钮竖排列（网格排列），居中且宽度为屏幕一半 -->
+        <!-- On medium and above, the two buttons are placed horizontally (block arrangement) and left-aligned -->
+        <!-- Below, the two buttons are arranged vertically (grid arrangement), centered and with half the screen width -->
         <div class="d-grid gap-4 col-6 col-md-12 mx-auto d-md-block mb-3">
-            <button type="button" class="btn btn-primary btn-lg" onclick="generateRandomNumbers()">生成随机数</button>
-            <button type="button" class="btn btn-danger btn-lg" onclick="confirmClearHistory()">清除历史记录</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="generateRandomNumbers()">Generate Random Numbers</button>
+            <button type="button" class="btn btn-danger btn-lg" onclick="confirmClearHistory()">Clear History</button>
         </div>
 
 
 
-        <h2 class="mt-4 mb-3">抽签历史记录</h2>
+        <h2 class="mt-4 mb-3">Draw History</h2>
         <ul id="randomNumbers" class="list-group"></ul>
     </div>
 
@@ -87,19 +87,19 @@
     <div id="toastMessage" class="toast toast-blue" role="alert" aria-live="assertive" aria-atomic="true"
         data-bs-delay="3000">
         <div class="toast-header">
-            <h5 class="me-auto mb-0">提示</h5>
+            <h5 class="me-auto mb-0">Tip</h5>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            <h5 class="mb-0">已清空历史记录。</h5>
+            <h5 class="mb-0">History has been cleared.</h5>
         </div>
     </div>
 
     <footer-component class="text-center mt-auto"></footer-component>
 
-    <!-- 语言独特代码 -->
+    <!-- Language-specific code -->
     <script>
-        const clearRandomHistoryConfirm = "确定要清除随机数抽签历史记录吗？"
+        const clearRandomHistoryConfirm = "Are you sure you want to clear the random number draw history?"
     </script>
     <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="/js/random_number.js"></script>

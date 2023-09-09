@@ -52,3 +52,32 @@ window.addEventListener('load', function () {
         requestCountElement.textContent = requestCount.toString();
     }
 });
+
+function changeLanguage(languageCode) {
+    // 获取当前页面的URL
+    let currentURL = window.location.pathname;
+
+    // 匹配当前语言部分的正则表达式
+    let languageRegex = /\/[a-z]{2}-[a-z]{2}\//;
+    let newURL = '';
+
+    if (currentURL == "/") {
+        newURL = '/' + languageCode + '/';
+    }
+    else if (isLanguageCodeOnly(currentURL)) {
+        newURL = '/';
+    }
+    else {
+        // 查找并替换语言部分以生成新的URL
+        newURL = currentURL.replace(languageRegex, '/' + languageCode + '/');
+    }
+
+    // 重定向到新的URL
+    window.location.href = newURL;
+}
+
+function isLanguageCodeOnly(str) {
+    // 使用正则表达式检查字符串格式
+    const regex = /^\/[a-z]{2}-[a-z]{2}\/$/;
+    return regex.test(str);
+}

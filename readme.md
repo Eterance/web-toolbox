@@ -20,3 +20,4 @@ Github Pages：[https://eterance.github.io/web-toolbox/](https://eterance.github
 - 所有 HTML 文件中的 `<title>` 标签
 - 如果你要使用 Cloudflare Pages，`.github/workflows/deploy.yml` 中的 `projectName` 字段
 - `site/components/` 中所有语言的 `navbar.js` 的网站标题、（如果 folk 了项目）`footer.js` 和 `footer-cf.js` 的项目链接
+- 修改链接的CDN

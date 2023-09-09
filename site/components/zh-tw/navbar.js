@@ -4,22 +4,22 @@ class NavBar extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-            <!-- 导航栏 -->
-            <!-- 导航栏 hover 变色 https://codingyaar.com/bootstrap-navbar-hover-background-color/-->
+            <!-- 導航欄 -->
+            <!-- 導航欄 hover 變色 https://codingyaar.com/bootstrap-navbar-hover-background-color/-->
             <nav class="navbar navbar-expand-lg">
-                <!-- 网站标题 -->
+                <!-- 網站標題 -->
                 <div class="container">
                     <a class="navbar-brand logo-font self-main-color" href="/">
                         <img src="/resources/NFS11-256.png" class="site-icon" alt="Site Icon">
-                        Eterance 的百宝箱
+                        Eterance 的百寶箱
                     </a>
         
-                    <!-- 切换按钮（适用于小屏幕设备）-->
+                    <!-- 切換按鈕（適用於小屏幕設備）-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
         
-                    <!-- 导航链接 -->
+                    <!-- 導航連結 -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
@@ -38,17 +38,17 @@ class NavBar extends HTMLElement {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-solid fa-language fa-lg"></i>
-                                    中文(简体)
+                                    中文(繁體)
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('zh-tw')">
-                                            中文(繁體) <span class="lang-explain">中文(繁体)</span>
+                                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('zh-cn')">
+                                            中文(简体) <span class="lang-explain">中文(簡體)</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('en-us')">
-                                            English(US) <span class="lang-explain">英文(美国)</span>
+                                            English(US) <span class="lang-explain">英文(美國)</span>
                                         </a>
                                     </li>
                                 </ul>

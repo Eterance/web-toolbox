@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordPress域名迁移SQL生成器 - Eterance的百宝箱</title>
+    <title>WordPress域名遷移SQL生成器 - Eterance的百寶箱</title>
     <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
 
     <!--prism.js-->
@@ -11,43 +11,43 @@
     <script src="https://cdn.staticfile.org/prism/9000.0.1/components/prism-sql.min.js"></script>
     <link href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism.min.css" rel="stylesheet" id="prism-stylesheet-light">
     <link href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet" id="prism-stylesheet-dark">
-    <!--剪贴板复制组件-->
+    <!--剪貼板複製組件-->
     <script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
 
     <!--CSS-->
     <link rel="stylesheet" href="/css/main.css">
-    <!--组件-->
-    <script src="/components/zh-cn/footer.js" type="text/javascript" defer></script>
-    <script src="/components/zh-cn/navbar.js" type="text/javascript"></script>
-    <!-- 放在开头可以消除加载瞬间的白屏 -->
+    <!--組件-->
+    <script src="/components/zh-tw/footer.js" type="text/javascript" defer></script>
+    <script src="/components/zh-tw/navbar.js" type="text/javascript"></script>
+    <!-- 放在開頭可以消除加載瞬間的白屏 -->
     <script src="/js/dark.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <navbar-component></navbar-component>
 
-    <!-- 页面内容 -->
+    <!-- 頁面內容 -->
     <div class="container mt-5 ">
-        <h1>WordPress 域名迁移 SQL 生成器</h1>
+        <h1>WordPress 域名遷移 SQL 生成器</h1>
         <br>
         <p>
-            本工具将节约您人生中宝贵的几分钟时间。
+            本工具將節省您人生中寶貴的幾分鐘時間。
         </p>
         <p>
-            您可能为 WordPress 网站更换域名之前没有正确修改设置，导致迁移后无法进入网站，需要使用 SQL 语句直接操纵数据库。
+            您可能為 WordPress 網站更換域名之前沒有正確修改設置，導致遷移後無法進入網站，需要使用 SQL 語句直接操縱數據庫。
         </p>
         <p>
-            不用担心，只需要在这里输入您的新旧域名，然后将生成的 SQL 语句在数据库中执行，即可解决网站无法正常访问的问题。
+            不用擔心，只需要在這裡輸入您的新舊域名，然後將生成的 SQL 語句在數據庫中執行，即可解決網站無法正常訪問的問題。
         </p>
         <p>
-            表前缀保留默认即可，除非您创建网站的时候修改了它。
+            表前綴保留預設即可，除非您創建網站的時候修改了它。
         </p>
         <br>
 
         <div class="row mb-3">
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <div>
-                    <label class="mb-2">旧域名</label>
+                    <label class="mb-2">舊域名</label>
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" id="oldDomain"
                             placeholder="https://blog1.old-domain.com">
@@ -65,20 +65,20 @@
             </div>
             <div class="col-lg-2 col-md-4 col-sm-12">
                 <div>
-                    <label class="mb-2">表前缀</label>
+                    <label class="mb-2">表前綴</label>
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" id="tablePrefix" value="wp_" placeholder='默认"wp_"'>
+                        <input type="text" class="form-control" id="tablePrefix" value="wp_" placeholder='預設"wp_"'>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 在中等以上，两个按钮水平放置（块排列），并且左对齐 -->
-        <!-- 以下，两个按钮竖排列（网格排列），居中且宽度为屏幕一半 -->
+        <!-- 在中等以上，兩個按鈕水平放置（塊排列），並且左對齊 -->
+        <!-- 以下，兩個按鈕豎排列（網格排列），居中且寬度為屏幕一半 -->
         <div class="d-grid gap-4 col-6 col-md-12 mx-auto d-md-block mb-3">
             <button type="button" class="btn btn-primary btn-lg" onclick="generateSQL()">生成SQL</button>
             <button type="button" class="btn btn-secondary btn-lg" id="copyButton"
-                data-clipboard-target="#sqlCode">复制到剪贴板</button>
+                data-clipboard-target="#sqlCode">複製到剪貼板</button>
         </div>
         <label class="mt-4 mb-2">SQL</label>
         <pre style="border-radius: 8px;"><code id="sqlCode" class="language-sql line-numbers"></code></pre>
@@ -90,7 +90,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            <h5 class="mb-0">已复制 SQL 到剪贴板。</h5>
+            <h5 class="mb-0">已複製 SQL 到剪貼板。</h5>
         </div>
     </div>
     
