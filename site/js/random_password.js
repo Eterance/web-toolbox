@@ -49,9 +49,17 @@ function generatePassword() {
         listItem.className = 'list-group-item container';
         listItem.innerHTML = `<span class="timestamp">${timestamp} </span> <p class="random-result"> ${password} </p>`;
         randompw.insertBefore(listItem, randompw.firstChild); // 将新项插入到顶部
+        // 确保randompw中的列表项最多保留100个
+        while (randompw.children.length >= 100) {
+            randompw.removeChild(randompw.lastChild); // 删除最旧的列表项
+        }
 
         // 将历史记录添加到LocalStorage
         history.unshift({ timestamp, pw: password });
+        // 确保历史记录最多保留100个密码项
+        if (history.length > 100) {
+            history.pop(); // 删除最旧的密码项
+        }
         localStorage.setItem('randomPwHistory', JSON.stringify(history));
     }
     analyzePassword();

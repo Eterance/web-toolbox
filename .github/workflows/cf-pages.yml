@@ -25,10 +25,21 @@ jobs:
       # Rename footer.js to footer-cf.js
       # Original footer.js is for github pages
       # you can safely remove this if you don't use my site
-      - name: Delete Github footer.js
-        run: rm ./site/components/footer.js
-      - name: Rename footer-cf.js to footer.js
-        run: mv ./site/components/footer-cf.js ./site/components/footer.js
+      - name: Replace footer.js
+        run: |
+          # get all subfolders
+          subfolders=$(find ./site/components/ -type d)
+
+          # foreach folder in subfolders
+          for folder in $subfolders; do
+            # delete footer.js
+            rm "$folder/footer.js"
+
+            # Rename footer-cf.js as footer.js
+            if [ -e "$folder/footer-cf.js" ]; then
+              mv "$folder/footer-cf.js" "$folder/footer.js"
+            fi
+          done
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
