@@ -27,11 +27,9 @@ jobs:
       # you can safely remove this if you don't use my site
       - name: Replace footer.js
         run: |
-          # get all subfolders
-          subfolders=$(find ./site/components/ -type d)
 
           # foreach folder in subfolders
-          for folder in $subfolders; do
+          for folder in ./site/components/*; do
             # delete footer.js
             rm "$folder/footer.js"
 
