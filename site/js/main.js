@@ -1,6 +1,7 @@
 
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
+const githubProjectName = "<ProjectNamePlaceHolder>";
 
 // 检查本地存储中的模式设置
 const currentMode = localStorage.getItem('theme');
@@ -56,31 +57,45 @@ window.addEventListener('load', function () {
 // 切换语言
 function changeLanguage(languageCode) {
     // 获取当前页面的URL
-    let currentURL = window.location.pathname;
+    let currentPath = window.location.pathname;
 
     // 匹配当前语言部分的正则表达式
     let languageRegex = /\/[a-z]{2}-[a-z]{2}\//;
+    let [prefix, realPath] = separatePath(currentPath);
+
     let newURL = '';
 
-    if (currentURL == "/") {
+    if (realPath == "/") {
         // 简体中文首页跳转到其他语言首页
         newURL = '/' + languageCode + '/';
     }
-    else if (isLanguageCodeOnly(currentURL) && languageCode == 'zh-cn') {
+    else if (isLanguageCodeOnly(realPath) && languageCode == 'zh-cn') {
         // 其他语言首页跳转到简体中文首页
         newURL = '/';
     }
     else {
         // 查找并替换语言部分以生成新的URL
-        newURL = currentURL.replace(languageRegex, '/' + languageCode + '/');
+        newURL = realPath.replace(languageRegex, '/' + languageCode + '/');
     }
 
     // 重定向到新的URL
-    window.location.href = newURL;
+    window.location.href = prefix + newURL;
 }
 
 function isLanguageCodeOnly(str) {
     // 使用正则表达式检查字符串格式
     const regex = /^\/[a-z]{2}-[a-z]{2}\/$/;
     return regex.test(str);
+}
+
+function separatePath(path) {
+    // 如果 path 以 githubProjectName 开头，则分离
+    if (path.startsWith(githubProjectName)) {
+        const prefix = githubProjectName;
+        const realPath = path.substring(githubProjectName.length);
+        return [prefix, realPath];
+    } else {
+        // 如果不是以 githubProjectName 开头，则没有前缀
+        return ['', path];
+    }
 }

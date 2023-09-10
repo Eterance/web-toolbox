@@ -9,7 +9,7 @@ class NavBar extends HTMLElement {
             <nav class="navbar navbar-expand-lg">
                 <!-- 網站標題 -->
                 <div class="container">
-                    <a class="navbar-brand logo-font self-main-color" href="/">
+                    <a class="navbar-brand logo-font self-main-color" href="/zh-tw/">
                         <img src="/resources/NFS11-256.png" class="site-icon" alt="Site Icon">
                         Eterance 的百寶箱
                     </a>
@@ -23,7 +23,7 @@ class NavBar extends HTMLElement {
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">
+                                <a class="nav-link" href="/zh-tw/">
                                     <i class="fa-solid fa-screwdriver-wrench"></i>
                                     工具列表
                                 </a>

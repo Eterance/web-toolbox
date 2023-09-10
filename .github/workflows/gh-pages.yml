@@ -41,6 +41,12 @@ jobs:
         run: |
           find ./site -type f -name "*.html" -exec sed -i 's|"/|"/web-toolbox/|g' {} +
           find ./site -type f -name "*.html" -exec sed -i 's|\.html||g' {} +
+      - name: Echo the combined string
+        run: echo "/${GITHUB_REPOSITORY#*/}"
+        shell: bash
+      - name: Replace <ProjectNamePlaceHolder> in main.js
+        run: |
+          sed -i "0,/<ProjectNamePlaceHolder>/s//\/${GITHUB_REPOSITORY#*/}/" site/js/main.js
       - name: Replace urls in JS files
         run: |
           find ./site/components -type f -name "*.js" -exec sed -i 's|"/|"/web-toolbox/|g' {} +
