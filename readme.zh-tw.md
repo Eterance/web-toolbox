@@ -2,6 +2,8 @@
 
 [简体中文](https://github.com/Eterance/web-toolbox/blob/main/readme.md) | 繁體中文 | [English](https://github.com/Eterance/web-toolbox/blob/main/readme.en-us.md)
 
+**本存儲庫的繁體中文由 Chat-GPT 翻譯自簡體中文。歡迎提交 PR 來改進翻譯。**
+
 ## 這是什麼？
 
 這是一個網頁版的工具箱，包含了一些有用的小工具。

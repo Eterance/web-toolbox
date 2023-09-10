@@ -1,6 +1,8 @@
-# Eterance Web Toolbox
+# Eterance's Toolbox (Web Toolbox)
 
 [简体中文](https://github.com/Eterance/web-toolbox/blob/main/readme.md) | [繁體中文](https://github.com/Eterance/web-toolbox/blob/main/readme.zh-tw.md) | English
+
+**The English in this repo is translated from Simplified Chinese by Chat-GPT. Feel free to submit a PR to improve the translation.**
 
 ## What is this?
 
