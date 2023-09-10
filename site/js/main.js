@@ -1,6 +1,7 @@
 
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
+// 该占位符将在 Github Actions 中被替换为实际的项目名称
 const githubProjectName = "<ProjectNamePlaceHolder>";
 
 // 检查本地存储中的模式设置

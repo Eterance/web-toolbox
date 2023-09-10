@@ -41,6 +41,7 @@ jobs:
         run: |
           find ./site -type f -name "*.html" -exec sed -i 's|"/|"/web-toolbox/|g' {} +
           find ./site -type f -name "*.html" -exec sed -i 's|\.html||g' {} +
+      # https://stackoverflow.com/a/61560798
       - name: Echo the combined string
         run: echo "/${GITHUB_REPOSITORY#*/}"
         shell: bash

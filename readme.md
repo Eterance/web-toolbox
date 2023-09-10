@@ -1,10 +1,12 @@
 # Eterance 的百宝箱 (web-toolbox)
 
+简体中文 | [繁體中文](https://github.com/Eterance/web-toolbox/blob/main/readme.zh-tw.md) | [English](https://github.com/Eterance/web-toolbox/blob/main/readme.en-us.md)
+
 ## 这是什么？
 
 这是一个网页版的工具箱，包含了一些有用的小工具。
 
-这是一个徒手撸的 HTML+CSS+JavaScript 的纯静态网站。
+这是一个徒手撸的 HTML+CSS+JavaScript 的纯静态网站，适配移动端视图、多语言、支持亮暗模式。
 
 ## 网址
 
