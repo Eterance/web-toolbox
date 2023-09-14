@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Special Character Encoding - Eterance's Toolbox</title>
+    <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
+
+    <!-- Clipboard Copy Component -->
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Components -->
+    <script src="/components/en-us/footer.js" type="text/javascript" defer></script>
+    <script src="/components/en-us/navbar.js" type="text/javascript"></script>
+    <!-- Placing it at the beginning can eliminate the white screen during loading -->
+    <script src="/js/dark.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <navbar-component></navbar-component>
+
+    <!-- Page Content -->
+    <div class="container mt-5 small-container">
+        <h1>URL Special Character Encoding</h1>
+        <br>
+        <p>
+            This tool encodes special characters in a URL to ensure they do not affect the semantics of the URL.
+        </p>
+
+        <h2 class="mt-4 mb-3">URL Encoding</h2>        
+        <div class="mb-3 form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="isEncodeParentheses" checked>
+            <label class="form-check-label" for="encodeParentheses">Escape English Parentheses</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Statement to be Escaped</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="preEncode">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Escape Result</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="postEncode">
+                <button class="btn btn-secondary" type="button" id="copyButton1"
+                    data-clipboard-target="#postEncode"><i class="fas fa-copy"></i></button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" onclick="encodeURL()">Encode</button>
+
+
+        <h2 class="mt-4 mb-3">URL Decoding</h2>
+        <div class="mb-3">
+            <label class="form-label">Statement to be Restored</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="preDecode">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Restoration Result</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="postDecode">
+                <button class="btn btn-secondary" type="button" id="copyButton2"
+                    data-clipboard-target="#postDecode"><i class="fas fa-copy"></i></button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" onclick="decodeURL()">Decode</button>
+
+    </div>
+
+
+
+    <div id="toastMessage" class="toast toast-blue" role="alert" aria-live="assertive" aria-atomic="true"
+        data-bs-delay="3000">
+        <div class="toast-header">
+            <h5 class="me-auto mb-0">Tip</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <h5 class="mb-0">Copied.</h5>
+        </div>
+    </div>
+
+    <footer-component class="text-center mt-auto"></footer-component>
+
+    <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/url_encode.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL 特殊字符编码 - Eterance的百宝箱</title>
+    <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
+
+    <!--剪贴板复制组件-->
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/main.css">
+    <!--组件-->
+    <script src="/components/zh-cn/footer.js" type="text/javascript" defer></script>
+    <script src="/components/zh-cn/navbar.js" type="text/javascript"></script>
+    <!-- 放在开头可以消除加载瞬间的白屏 -->
+    <script src="/js/dark.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <navbar-component></navbar-component>
+
+    <!-- 页面内容 -->
+    <div class="container mt-5 small-container">
+        <h1>URL 特殊字符编码</h1>
+        <br>
+        <p>
+            本工具可以将 URL 中的特殊字符进行编码，以便于其不影响 URL 的语义。
+        </p>
+
+        <h2 class="mt-4 mb-3">URL 编码</h2>        
+        <div class="mb-3 form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="isEncodeParentheses" checked>
+            <label class="form-check-label" for="encodeParentheses">转义英文圆括号</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">要被转义的语句</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="preEncode">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">转义结果</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="postEncode">
+                <button class="btn btn-secondary" type="button" id="copyButton1"
+                    data-clipboard-target="#postEncode"><i class="fas fa-copy"></i></button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" onclick="encodeURL()">编码</button>
+
+
+        <h2 class="mt-4 mb-3">URL 解码</h2>
+        <div class="mb-3">
+            <label class="form-label">要被还原的语句</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="preDecode">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">还原结果</label>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="postDecode">
+                <button class="btn btn-secondary" type="button" id="copyButton2"
+                    data-clipboard-target="#postDecode"><i class="fas fa-copy"></i></button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" onclick="decodeURL()">解码</button>
+
+    </div>
+
+
+
+    <div id="toastMessage" class="toast toast-blue" role="alert" aria-live="assertive" aria-atomic="true"
+        data-bs-delay="3000">
+        <div class="toast-header">
+            <h5 class="me-auto mb-0">提示</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <h5 class="mb-0">已复制。</h5>
+        </div>
+    </div>
+
+    <footer-component class="text-center mt-auto"></footer-component>
+
+    <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/url_encode.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
