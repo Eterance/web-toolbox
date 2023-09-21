@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image API: SQL Generation - Eterance's Toolbox</title>
+    <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
+
+    <!--AWS S3-->
+    <script src="https://cdn.staticfile.org/aws-sdk/2.1460.0/aws-sdk.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/pictures-to-insert-sql.css">
+    <!--Components-->
+    <script src="/components/en-us/footer.js" type="text/javascript" defer></script>
+    <script src="/components/en-us/navbar.js" type="text/javascript"></script>
+    <!-- Placing this at the beginning eliminates the initial white screen -->
+    <script src="/js/dark.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <navbar-component></navbar-component>
+
+    <!-- Page Content -->
+    <div class="container mt-5 small-container">
+        <h1>Random Image API: SQL Generation</h1>
+        <br>
+        <p class="intro">
+            Suppose you have some images stored in an object storage, and now you want to store the URLs of these images in a database. Just drag and drop the images from your local storage and fill in the table name and the object storage URL below, and you can generate SQL statements.
+        </p>
+        <p class="intro">
+            See more at:
+            <a href="https://blog.baldcoder.top/articles/building-a-free-random-image-api-with-cloudflare-workers-d1-r2/" target="_blank">Building a Free Random Image API with Cloudflare Workers, D1 and R2</a>
+             (Simplify Chinese only)
+        </p>
+        <br>
+        <div class="mt-3 mb-3 dragover-area" id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="dragover-area-inner d-flex flex-column align-items-center justify-content-center">
+                <p>Drag and drop images here to add them</p>
+                
+                <div class="d-grid mx-auto d-sm-block gap-3">
+                    <!--<button type="button" class="btn btn-primary" onclick="selectFiles()">Select Images</button>-->
+                    <button type="button" class="btn btn-danger" onclick="clearFiles()">Clear Images</button>
+                </div>
+            </div>
+        </div>
+        <p id="imagesCount">Number of Images Added: <span id="addedPicsCount">0</span></p>
+        <div>
+            <div class="mb-3 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="isReconstructTable">
+                <label class="form-check-label" for="isReconstructTable">Delete and Rebuild Table</label>
+            </div>
+            <p class="ms-3">
+                Enabled: The generated SQL will delete and recreate the table, then insert image data. This means all old data in the table will be deleted. Suitable for initial use or when you want to clear the table.
+            </p>
+            <p class="ms-3">
+                Disabled: The generated SQL will only insert image data. This means all old data in the table will be retained. Suitable when you already have data and only want to append images.
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <label for="tableName" class="form-label">Table Name to Insert Into</label>
+            <input type="text" class="form-control form-control-lg" id="tableName" placeholder="tableName">
+        </div>
+
+        <div class="mb-3">
+            <label for="baseUrl" class="form-label">Base URL of Object Storage</label>
+            <input type="text" class="form-control form-control-lg" id="baseUrl" placeholder="https://aaa.xxx.com">
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg mb-3" onclick="generateSQL()">Generate and Download SQL</button>
+    </div>
+
+    <footer-component class="text-center mt-auto"></footer-component>
+
+    
+    <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/pictures-to-insert-sql.js"></script>
+    <script src="/js/prismjs_theme_switch.js"></script>
+</body>
+
+</html>

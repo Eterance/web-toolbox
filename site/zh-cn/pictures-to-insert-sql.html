@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机图片 API：SQL 生成 - Eterance的百宝箱</title>
+    <link rel="icon" href="/resources/NFS11-256.png" type="image/png">
+
+    <!--AWS S3-->
+    <script src="https://cdn.staticfile.org/aws-sdk/2.1460.0/aws-sdk.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/pictures-to-insert-sql.css">
+    <!--组件-->
+    <script src="/components/zh-cn/footer.js" type="text/javascript" defer></script>
+    <script src="/components/zh-cn/navbar.js" type="text/javascript"></script>
+    <!-- 放在开头可以消除加载瞬间的白屏 -->
+    <script src="/js/dark.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <navbar-component></navbar-component>
+
+    <!-- 页面内容 -->
+    <div class="container mt-5 small-container">
+        <h1>随机图片 API：SQL 生成</h1>
+        <br>
+        <p class="intro">
+            假设你有一些存储在对象存储上的图片，现在想要将这些图片的 URL 存入到数据库中。只需要将图片在本地的那一份拖入并添加，在下面填写好被插入的表名和对象存储的 URL，就可以生成 SQL 语句了。
+        </p>
+        <p class="intro">
+            详见：
+            <a href="https://blog.baldcoder.top/articles/building-a-free-random-image-api-with-cloudflare-workers-d1-r2/" target="_blank">使用 Cloudflare Workers + D1 + R2 搭建免费的随机图片 API</a>
+        </p>
+        <br>
+        <div class="mt-3 mb-3 dragover-area" id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="dragover-area-inner d-flex flex-column align-items-center justify-content-center">
+                <p>拖放图片到此处来添加</p>
+                
+                <div class="d-grid mx-auto d-sm-block gap-3">
+                    <!--<button type="button" class="btn btn-primary" onclick="selectFiles()">选择图片</button>-->
+                    <button type="button" class="btn btn-danger" onclick="clearFiles()">清空图片</button>
+                </div>
+            </div>
+        </div>
+        <p id="imagesCount">已添加的图片数：<span id="addedPicsCount">0</span></p>
+        <div>
+            <div class="mb-3 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="isReconstructTable">
+                <label class="form-check-label" for="isReconstructTable">删除并重建表格</label>
+            </div>
+            <p class="ms-3">
+                开：生成的 SQL 会删除 (Drop) 并重建 (Create) 表格，然后插入 (Insert) 图片数据。也就是说，表格中的所有旧数据都会被删除。适合初次使用或者想要清空表格的情况。
+            </p>
+            <p class="ms-3">
+                关：生成的 SQL 只会插入 (Insert) 图片数据。也就是说，表格中的所有旧数据都会被保留。适合已经有数据，只想追加图片的情况。
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <label for="tableName" class="form-label">被插入的表名</label>
+            <input type="text" class="form-control form-control-lg" id="tableName" placeholder="tableName">
+        </div>
+
+        <div class="mb-3">
+            <label for="baseUrl" class="form-label">对象存储的根 URL</label>
+            <input type="text" class="form-control form-control-lg" id="baseUrl" placeholder="https://aaa.xxx.com">
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg mb-3" onclick="generateSQL()">生成并下载 SQL</button>>
+    </div>
+
+    <footer-component class="text-center mt-auto"></footer-component>
+
+    
+    <script src="https://cdn.staticfile.org/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/pictures-to-insert-sql.js"></script>
+</body>
+
+</html>

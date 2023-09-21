@@ -1,0 +1,9 @@
+.dragover-area {
+    border: 1px dashed #7f7f7f;
+    border-radius: 8px;
+}
+
+.dragover-area-inner {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

@@ -24,7 +24,6 @@ class Footer extends HTMLElement {
                         
                     </p>
                     <p>加载耗时 <span id="loadTime"></span> 秒 | HTTP请求 <span id="requestCount"></span> 次</p>
-                    <p>开发中，不代表最终呈现</p>
                 </div>
             </footer>
             
